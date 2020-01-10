@@ -8,7 +8,7 @@ Example useage on CoreOS in order to make `fusermount` available to the host.
 sudo mkdir -p /opt/bin
 
 # run the container and copy out the binary
-sudo docker run -d --name fuse fuse sleep && \
+sudo docker run -d --name fuse saracen9/fuse-builder sleep && \
     sudo docker cp fuse:/usr/local/bin/fusermount3 /opt/bin/fusermount && \
     docker rm -f fuse
 ```
