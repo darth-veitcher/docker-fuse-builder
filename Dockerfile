@@ -1,5 +1,5 @@
 FROM ubuntu
-ARG LIBFUSE_VERSION=fuse-3.5.0
+ARG LIBFUSE_VERSION=fuse-3.9.0
 
 # Installs LibFUSE so we dont end up with errors
 # in coreos when trying to mount rclone.
