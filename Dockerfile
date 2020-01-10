@@ -1,4 +1,5 @@
 FROM ubuntu
+ARG LIBFUSE_VERSION=fuse-3.5.0
 
 # Installs LibFUSE so we dont end up with errors
 # in coreos when trying to mount rclone.
@@ -13,7 +14,7 @@ RUN apt-get update && apt-get upgrade -y && \
         libudev-dev \
         udev
 
-RUN wget -O "fuse.tar.xz" "https://github.com/libfuse/libfuse/releases/download/fuse-3.5.0/fuse-3.5.0.tar.xz" && \
+RUN wget -O "fuse.tar.xz" "https://github.com/libfuse/libfuse/releases/download/${LIBFUSE_VERSION}/${LIBFUSE_VERSION}.tar.xz" && \
     tar -xf fuse.tar.xz && \
     rm -f fuse.tar.xz && mv fuse* fuse
 
